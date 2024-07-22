@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.animated-text {
+  font-size: 4rem;
+  font-family: serif;
+  color: transparent;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 2px; /* Add some space between the logo and the text */
+}
+
+.logo {
+  display: none;
+  height: 6rem; /* Match the height of the text */
+  transform: translateX(-100%);
+  animation: slideInLeft 1s forwards;
+  
+  filter: brightness(0) saturate(100%) invert(18%) sepia(93%) saturate(684%) hue-rotate(81deg) brightness(96%) contrast(90%);
+
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from { border-color: darkgreen; }
+  50% { border-color: darkgreen; }
+}
+
+.animated-text::before {
+  content: "Sidra Noor";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  text-shadow: -1px -1px 0 darkgreen, 1px -1px 0 darkgreen, 1px 1px 0 darkgreen, -1px 1px 0 darkgreen;
+  border-right: 0.1em solid darkgreen;
+  animation: typing 3s steps(20) forwards, blink-caret .75s step-end infinite;
+}
+
+
+.animated-text::after {
+  content: "Sidra Noor";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: darkgreen;
+  clip-path: inset(0 0 0 100%);
+  animation: fill-text 1s steps(10) 1s forwards;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: darkgreen;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 3s forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.viruss{
+
+opacity: 0.5;
+z-index: -2;
+
+
+}
+@keyframes fill-text {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+button {
+  border: none;
+  padding: 7px 14px;
+  font-size: 30px;
+  position: relative;
+  background: transparent;
+  color: green;
+
+  border: 3px solid green;
+  cursor: pointer;
+  transition: all 0.7s;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+button:hover {
+  color: #000;
+}
+span {
+  transition: all 0.7s;
+  z-index: -1;
+}
+
+button .first {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: green;
+}
+
+button:hover .first {
+  top: 0;
+  right: 0;
+}
+button .second {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  height: 100%;
+  width: 25%;
+  background: green;
+}
+
+button:hover .second {
+  top: 0;
+  left: 50%;
+}
+
+button .third {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 100%;
+  width: 25%;
+  background: green;
+}
+
+button:hover .third {
+  top: 0;
+  left: 25%;
+}
+
+button .fourth {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background: green;
+}
+
+button:hover .fourth {
+  top: 0;
+  left: 0;
+}

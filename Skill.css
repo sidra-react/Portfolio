@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('skill.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Ensures the image stays in place on scroll */
+  font-family: 'Orbitron', sans-serif;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.skiltxt {
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+}
+
+.skiltxt2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 30px; /* Increased bottom margin */
+}
+
+.range {
+  position: relative;
+  background-color: #4b4747ac;
+  width: 100%; /* Full width for responsiveness */
+    height: 30px;
+  margin: 0px auto 30px; 
+  color: white;
+  font-weight: 600;
+  transform: skew(30deg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.range:before {
+  --width: calc(var(--p) * 1%);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(145deg, #126421, #32f135);
+  z-index: 0;
+  -webkit-animation: load 0.5s forwards linear, glitch 2s infinite linear;
+          animation: load 0.5s forwards linear, glitch 2s infinite linear;
+}
+.range:after {
+  counter-reset: progress var(--p);
+  content: counter(progress) "%";
+  color: #000;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  color: white;
+  transform: translateY(-50%) skewX(-30deg);
+  z-index: 1;
+}
+.range__label {
+  transform: skew(-30deg) translateY(-100%);
+  line-height: 1.5;
+  color: white;
+}
+
+@-webkit-keyframes load {
+  to {
+    width: var(--width);
+  }
+}
+
+@keyframes load {
+  to {
+    width: var(--width);
+  }
+}
+@-webkit-keyframes glitch {
+  0%, 5% {
+    transform: translate(0, 0);
+  }
+  1% {
+    transform: translate(-5%, -10%);
+  }
+  2% {
+    transform: translate(10%, 30%);
+  }
+  3% {
+    transform: translate(-43%, 10%);
+  }
+  4% {
+    transform: translate(2%, -23%);
+  }
+}
+@keyframes glitch {
+  0%, 5% {
+    transform: translate(0, 0);
+  }
+  1% {
+    transform: translate(-5%, -10%);
+  }
+  2% {
+    transform: translate(10%, 30%);
+  }
+  3% {
+    transform: translate(-43%, 10%);
+  }
+  4% {
+    transform: translate(2%, -23%);
+  }
+}
+.soft-skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.soft-skill-box {
+ 
+  width: 150px;
+  height: 120px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 1s forwards; /* Animation for sliding in */
+  opacity: 0;
+  background: linear-gradient(145deg, #ffffff30, #00000040); /* Light shade effect */
+  background-blend-mode: multiply; /* Blend background color and gradient */
+}
+
+.soft-skill-box:hover {
+  transform: translateY(-10px); /* Rises on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.soft-skill-box:nth-child(1) {
+  background: linear-gradient(145deg, #e4816a, #C70039); /* Red-Orange gradient */
+  animation-delay: 0.5s;
+}
+
+.soft-skill-box:nth-child(2) {
+  font-size: 15px;
+  background: linear-gradient(145deg, #33FF57, #17944b); /* Green gradient */
+  animation-delay: 1s;
+}
+
+.soft-skill-box:nth-child(3) {
+  background: linear-gradient(145deg, #3752c9, #52a2d8); /* Blue gradient */
+  animation-delay: 1.5s;
+}
+
+.soft-skill-box:nth-child(4) {
+  background: linear-gradient(145deg, #f38200, #F1C40F); /* Yellow gradient */
+  animation-delay: 2s;
+}
+
+.soft-skill-box:nth-child(5) {
+  background: linear-gradient(145deg, #8E44AD, #c86ccd); /* Purple gradient */
+  animation-delay: 2.5s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.go-back-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 9px 8px;
+  background-color: #910707;
+  color: #fffbfb;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.go-back-button:hover {
+  background-color: #952424;
+  color: #f6e6e6;
+  transform: scale(1.1);
+}
